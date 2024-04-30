@@ -1,0 +1,40 @@
+name: Build and Test FiveSafes.Net
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - FiveSafes.Net/**
+      - FiveSafes.Net.Tests/**
+      - .github/workflows/build.FiveSafes.Net.yml
+
+env:
+  # Configure these
+  CI_build-config: Debug
+  CI_dotnet-version: 8.0.x
+  Agent_project: ./FiveSafes.Net/FiveSafes.Net.csproj
+  Agent_test_project: ./FiveSafes.Net.Tests/FiveSafes.Net.Tests.csproj
+
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.CI_dotnet-version }}
+      - name: Build FiveSafes.Net
+        run: >-
+          dotnet build
+          ${{ env.Agent_project }}
+          -c ${{ env.CI_build-config }}
+      - name: Run FiveSafes.Net.Tests
+        run: >-
+          dotnet test
+          ${{ env.Agent_test_project }}
+          -c ${{ env.CI_build-config }}
