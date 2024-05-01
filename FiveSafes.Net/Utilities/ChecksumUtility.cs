@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FiveSafes.Net.Utilities;
+namespace FiveSafes.Utilities;
 
 /// <summary>
 /// Utility Class for working with checksums

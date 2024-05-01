@@ -1,4 +1,4 @@
-namespace FiveSafes.Net.Constants;
+namespace FiveSafes.Constants;
 
 public class BagItConstants
 {

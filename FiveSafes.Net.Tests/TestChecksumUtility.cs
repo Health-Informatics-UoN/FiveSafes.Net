@@ -1,5 +1,5 @@
 using System.Text;
-using FiveSafes.Net.Utilities;
+using FiveSafes.Utilities;
 
 namespace FiveSafes.Net.Tests;
 
