@@ -1,7 +1,7 @@
-using FiveSafes.Net.Constants;
-using FiveSafes.Net.Utilities;
+using FiveSafes.Constants;
+using FiveSafes.Utilities;
 
-namespace FiveSafes.Net;
+namespace FiveSafes;
 
 public class BagItArchive
 {
