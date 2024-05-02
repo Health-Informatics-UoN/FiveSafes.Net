@@ -21,5 +21,10 @@
   <ItemGroup>
     <PackageReference Include="ROCrates.Net" Version="0.1.4"/>
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/"/>
+    <None Include="../LICENSE" Pack="true" PackagePath="/"/>
+  </ItemGroup>
 
 </Project>
